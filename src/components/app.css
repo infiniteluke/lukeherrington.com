@@ -12,6 +12,7 @@ select {
 .gradient-text,
 a {
   background: linear-gradient(45deg, #00CCFF, #4BE8FF);
+  color: #4BE8FF;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
