@@ -1,11 +1,25 @@
 input,
 textarea,
 select {
-  border-image-source: linear-gradient(#00CCFF, #4BE8FF);
+  border-image-source: linear-gradient(45deg, #00CCFF, #4BE8FF);
   border-width: 2pt;
   border-image-slice: 1;
   width: 100%;
   padding: 8px;
+  box-shadow: none;
+}
+
+.gradient-text,
+a {
+  background: linear-gradient(45deg, #00CCFF, #4BE8FF);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.site-title a {
+  background: white;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 select option {
@@ -34,3 +48,6 @@ form button {
   padding-bottom: 3px;
 }
 
+.site-title {
+  margin: 0;
+}
