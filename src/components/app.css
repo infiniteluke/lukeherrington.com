@@ -1,0 +1,36 @@
+input,
+textarea,
+select {
+  border-image-source: linear-gradient(#00CCFF, #4BE8FF);
+  border-width: 2pt;
+  border-image-slice: 1;
+  width: 100%;
+  padding: 8px;
+}
+
+select option {
+  padding: 1px;
+}
+
+button {
+  background: linear-gradient(#00CCFF, #4BE8FF);
+  border: none;
+  border-radius: 5px;
+  padding: 13px 25px;
+  color: white;
+}
+
+form button {
+  width: 100%;
+  text-align: center;
+}
+
+.form-field {
+  margin: 10px 0;
+}
+
+.form-field label {
+  display: block;
+  padding-bottom: 3px;
+}
+

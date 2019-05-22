@@ -44,5 +44,32 @@ import SEO from '../components/seo'
 - [🎴scrummy](http://www.playscrummy.com/) - a story point estimation game built with react, websockets, and node.js
 
 <h2 style={{ textAlign: 'center', marginTop: '60px' }}>Let me know how I can help</h2>
+<form name="contact" netlify-honeypot="bot" method="POST" data-netlify="true" style={{ maxWidth: '400px', margin: '0 auto', display: 'flex', flexDirection: 'column' }}>
+  <div class="form-field">
+    <label htmlFor="name">Name:</label>
+    <input style={{ display: 'block' }} type="text" name="name" />   
+  </div>
+  <div class="form-field">
+    <label htmlFor="email">Email:</label>
+    <input style={{ display: 'block' }} type="email" name="email" />
+  </div>
+  <div class="form-field">
+    <label htmlFor="role[]">Reason for contact:</label>
+    <select style={{ display: 'block' }} name="role[]" multiple>
+      <option value="dev">Web Development Consulting</option>
+      <option value="training">Training</option>
+      <option value="speaking">Speaking Engagement</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+  <div class="form-field">
+    <label htmlFor="message">Message:</label>
+    <textarea rows="5" style={{ display: 'block' }} name="message"></textarea>
+  </div>
+  <input style={{ display: 'none' }} type="text" name="bot" />   
+  <div class="form-field">
+    <button type="submit">Send</button>
+  </div>
+</form>
 <div style={{fontSize: '5rem', paddingTop: '100px', 'textAlign': 'center' }}>👋</div>
 <footer style={{textAlign:'center', margin: '100px 0 100px 0'}}><i>I hope you have a great day 💛</i></footer>
