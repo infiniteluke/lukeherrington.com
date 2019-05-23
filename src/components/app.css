@@ -32,7 +32,7 @@ select option {
 }
 
 button {
-  background: linear-gradient(#00CCFF, #4BE8FF);
+  background: linear-gradient(45deg, #00CCFF, #4BE8FF);
   border: none;
   border-radius: 5px;
   padding: 13px 25px;
