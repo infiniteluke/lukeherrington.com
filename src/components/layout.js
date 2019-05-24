@@ -18,21 +18,23 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <main style={{
-        padding: 'env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)'
-      }}>
+      <React.Fragment>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: '0 auto',
-            maxWidth: 860,
-            padding: '0px 20px',
-            paddingTop: 0,
-          }}
-        >
-          {children}
-        </div>
-      </main>
+        <main style={{
+          padding: 'env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)'
+        }}>
+          <div
+            style={{
+              margin: '0 auto',
+              maxWidth: 860,
+              padding: '0px 20px',
+              paddingTop: 0,
+            }}
+          >
+            {children}
+          </div>
+        </main>
+      </React.Fragment>
     )}
   />
 )
