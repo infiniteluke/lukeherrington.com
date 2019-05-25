@@ -5,6 +5,7 @@ body {
 input,
 textarea,
 select {
+  outline-color: #4BE8FF;
   border-image-source: linear-gradient(45deg, #00CCFF, #4BE8FF);
   border-width: 2pt;
   border-image-slice: 1;
