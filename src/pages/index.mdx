@@ -68,6 +68,7 @@ import Label from '../components/label';
 
 <h2 style={{ textAlign: 'center', marginTop: '60px' }}>Let me know how I can help</h2>
 <form name="contact" netlify-honeypot="bot" method="POST" data-netlify="true" style={{ maxWidth: '400px', margin: '0 auto', display: 'flex', flexDirection: 'column' }}>
+  <input type="hidden" name="form-name" value="contact" />
   <div class="form-field">
     <label htmlFor="name">Name:</label>
     <input style={{ display: 'block' }} type="text" name="name" />   
