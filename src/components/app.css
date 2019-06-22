@@ -22,6 +22,10 @@ a {
   -webkit-text-fill-color: transparent;
 }
 
+.label {
+  -webkit-text-fill-color: white;
+}
+
 .site-title a {
   background: white;
   background-clip: text;
