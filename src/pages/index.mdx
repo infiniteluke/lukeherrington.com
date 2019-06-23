@@ -40,23 +40,24 @@ import Label from '../components/label';
 
 ### 📣 I give talks and trainings
 <ul>
-<Li label="2018" link="https://www.youtube.com/watch?v=ueZtczrQO-8">Using VR to tell stories on the web</Li>
-<Li label="2017" link="https://www.youtube.com/watch?v=q6iyiPaGXFo">Building WebVR experiences with Drupal, React, and AFrame</Li>
-<Li label="2016" link="https://github.com/fourkitchens/waterwheel-training">React + Drupal 8 JSON API</Li>
-  <ul>
-    <Li link="https://github.com/fourkitchens/waterwheel-training">Lessons</Li>
-    <Li link="https://docs.google.com/document/d/1MzBlCK7oDczbjTtp3tmcKtjgz9Hh-Rxfv3BWY1yEq3I/view">Booklet</Li>
-    <Li link="https://drive.google.com/file/d/0BxzTPP5EWAyoUk1IM2Rra2x3UUE/view">Attendee Feedback</Li>
-  </ul>
+  <Li label="2018"><a href="https://www.youtube.com/watch?v=ueZtczrQO-8">Using VR to tell stories on the web</a></Li>
+  <Li label="2017"><a href="https://www.youtube.com/watch?v=q6iyiPaGXFo">Building WebVR experiences with Drupal, React, and AFrame</a></Li>
+  <Li label="2016"><a href="https://github.com/fourkitchens/waterwheel-training">React + Drupal 8 JSON API</a>
+    <ul>
+      <li><a href="https://github.com/fourkitchens/waterwheel-training">Lesson Repo</a></li>
+      <li><a href="https://docs.google.com/document/d/1MzBlCK7oDczbjTtp3tmcKtjgz9Hh-Rxfv3BWY1yEq3I/view">Booklet</a></li>
+      <li><a href="https://drive.google.com/file/d/0BxzTPP5EWAyoUk1IM2Rra2x3UUE/view">Attendee Feedback</a></li>
+    </ul>
+  </Li>
 </ul>
 
 ## ✍️ I write about React, APIs and more
 <ul>
-  <Li label="2017" link="https://www.fourkitchens.com/blog/development/react-vr-early-look-facebooks-foray-vr/">React VR: An Early Look At Facebook’s Foray Into VR</Li>
-  <Li label="2017" link="https://www.fourkitchens.com/blog/events/api-first-drupal-8-react-and-you/">API First Drupal 8, React, and You!</Li>
-  <Li label="2016" link="https://www.fourkitchens.com/blog/development/the-simplicity-of-serverless-architecture/">The Simplicity of Serverless Architecture</Li>
-  <Li label="2016" link="https://www.fourkitchens.com/blog/article/trip-report-dinosaurjs/">Trip Report: DinosaurJS</Li>
-  <Li label="2015" link="https://www.gizra.com/content/restful-backbone-marionette/">Forking Todo Restful with Backbone.Marionette</Li>
+  <Li label="2017"><a href="https://www.fourkitchens.com/blog/development/react-vr-early-look-facebooks-foray-vr/">React VR: An Early Look At Facebook’s Foray Into VR</a></Li>
+  <Li label="2017"><a href="https://www.fourkitchens.com/blog/events/api-first-drupal-8-react-and-you/">API First Drupal 8, React, and You!</a></Li>
+  <Li label="2016"><a href="https://www.fourkitchens.com/blog/development/the-simplicity-of-serverless-architecture/">The Simplicity of Serverless Architecture</a></Li>
+  <Li label="2016"><a href="https://www.fourkitchens.com/blog/article/trip-report-dinosaurjs/">Trip Report: DinosaurJS</a></Li>
+  <Li label="2015"><a href="https://www.gizra.com/content/restful-backbone-marionette/">Forking Todo Restful with Backbone.Marionette</a></Li>
 </ul>
 
 ### 💻 Check out my [GitHub](https://github.com/infiniteluke) where I contribute Open Source projects
@@ -71,25 +72,29 @@ import Label from '../components/label';
 <form name="contact" data-netlify-honeypot="bot" method="POST" data-netlify="true" style={{ maxWidth: '400px', margin: '0 auto', display: 'flex', flexDirection: 'column' }}>
   <input type="hidden" name="form-name" value="contact" />
   <div class="form-field">
-    <label htmlFor="name">Name:</label>
-    <input style={{ display: 'block' }} type="text" name="name" />   
+    <label htmlFor="name">Name:
+      <input type="text" name="name" />
+    </label>
   </div>
   <div class="form-field">
-    <label htmlFor="email">Email:</label>
-    <input style={{ display: 'block' }} type="email" name="email" />
+    <label htmlFor="email">Email:
+    <input type="email" name="email" />
+    </label>
   </div>
   <div class="form-field">
-    <label htmlFor="role[]">Reason for contact:</label>
-    <select style={{ display: 'block' }} name="role[]" multiple>
+    <label htmlFor="role[]">Reason for contact:
+    <select name="role[]" multiple>
       <option value="dev">Web Development Consulting</option>
       <option value="training">Training</option>
       <option value="speaking">Speaking Engagement</option>
       <option value="other">Other</option>
     </select>
+    </label>
   </div>
   <div class="form-field">
-    <label htmlFor="message">Message:</label>
-    <textarea rows="5" style={{ display: 'block' }} name="message"></textarea>
+    <label htmlFor="message">Message:
+    <textarea rows="5" name="message"></textarea>
+    </label>
   </div>
   <input style={{ display: 'none' }} type="text" name="bot" />   
   <div class="form-field">
