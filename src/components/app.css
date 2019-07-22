@@ -74,7 +74,7 @@ li *:nth-child(1n) {
 }
 
 li *:nth-child(2n) {
-  flex-basis: 80%;
+  flex-basis: 70%;
 }
 
 li.list-item ul {
