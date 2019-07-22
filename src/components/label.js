@@ -7,6 +7,7 @@ export default ({ children }) => (
     marginRight: '6px',
     borderRadius: '4px',
     color: 'white',
+    alignSelf: 'flex-start'
   }}>
     {children}
   </span>
