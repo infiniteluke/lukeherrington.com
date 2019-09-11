@@ -170,7 +170,7 @@ const [props, set] = useSpring(() => ({
   ...
 ```
 
-5. Finally, the `transform` style is set using the springs `to` function which allows me to transform the spring values into a the CSS rotations/scale. ex: `transform: perspective(800px) rotateX(10deg) rotateY(-10deg) scale(1.2)`.
+5. Finally, the `transform` style is set using the springs `to` function which allows me to transform the spring values into the CSS rotations/scale. ex: `transform: perspective(800px) rotateX(10deg) rotateY(-10deg) scale(1.2)`.
 ```
 transform: props.xys.to(transform),
 ```
