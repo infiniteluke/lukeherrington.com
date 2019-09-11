@@ -45,16 +45,24 @@ That’s what makes me excited about [react-spring](https://react-spring.io), a 
 
 To change the `scale` of a button on hover, I create some state:
 
-```
-const [active, setActive] = React.useState(false);
-```
+<LiveProvider
+  code={`const [active, setActive] = React.useState(false);`}
+  theme={theme}
+  disabled
+>
+  <LiveEditor style={{ margin: '35px 0 ' }} />
+</LiveProvider>
 
 Change that state `onMouseOver` and `onMouseOut` of the button
 
-```
-onMouseOver={() => setActive(true)}
-onMouseOut={() => setActive(false)}
-```
+<LiveProvider
+  code={`onMouseOver={() => setActive(true)}
+onMouseOut={() => setActive(false)}`}
+  theme={theme}
+  disabled
+>
+  <LiveEditor style={{ margin: '35px 0 ' }} />
+</LiveProvider>
 
 And conditionally set the `transform` CSS property on the button `style` based on the `active` state.
 
@@ -98,26 +106,38 @@ There are a couple subtle changes to make this work:
 
 Add the `useSpring` hook and move the CSS properties and conditions inside the object it receives. `useSpring` is imported from `react-spring`
 
-```
-const props = useSpring({
+<LiveProvider
+  code={`const props = useSpring({
   transform: active ? 'scale(1.2)' : 'scale(1)',
-});
-```
+});`}
+  theme={theme}
+  disabled
+>
+  <LiveEditor style={{ margin: '35px 0 ' }} />
+</LiveProvider>
 
 Change the `button` element into a `animated.button`. `animated` is imported from react-spring.
 
-```
-<animated.button
-...
-```
+<LiveProvider
+  code={`<animated.button>`}
+  theme={theme}
+  disabled
+>
+  <LiveEditor style={{ margin: '35px 0 ' }} />
+</LiveProvider>
+
 
 Wire up the "animated" `props` from `useSpring` to our buttons `style` prop.
 
-```
-style={{
+<LiveProvider
+  code={`style={{
   transform: props.transform,
-  ...
-```
+}}`}
+  theme={theme}
+  disabled
+>
+  <LiveEditor style={{ margin: '35px 0 ' }} />
+</LiveProvider>
 
 And just like that, you've animated your React Component! The above is a pretty simple animation, though, and **I'd recommend using CSS animations if you're simply looking for a hover interaction**. So, let's look at a more involved animation to see where the power of react-spring really kicks in!
 
@@ -169,48 +189,65 @@ Let's walk through the changes needed to make this interaction possible:
 1. First, you'll notice I got rid of the `active` state. If your hover state only affects style in your render, then consider just using CSS.
 2. I setup a refs that will be used in calculating the animated button's size and location. This is necessary for the `calc` function to work. I haven't included that function because, Math. If you want to see it, [check out the source](https://github.com/infiniteluke/lukeherrington.com/blob/master/src/examples/make-it-springy.js).
 
-```
-  const buttonRef = React.useRef();
-```
+<LiveProvider
+  code={`const buttonRef = React.useRef();`}
+  theme={theme}
+  disabled
+>
+  <LiveEditor style={{ margin: '35px 0 ' }} />
+</LiveProvider>
 
 3. Next, I create the spring. It holds a array of the `x` rotation, `y` rotation and the `scale` values for our transform, respectively. I've also configured the spring's dynamics a bit to make the animation more playful and bouncy. You may notice I'm using `useSpring` a bit differently. You can optionally destructure a `set` function for triggering the spring manually.
 
-```
-const [props, set] = useSpring(() => ({
+<LiveProvider
+  code={`const [props, set] = useSpring(() => ({
   xys: [0, 0, 1],
   config: { mass: 7, tension: 500, friction: 40 }
-}));
-```
+}));`}
+  theme={theme}
+  disabled
+>
+  <LiveEditor style={{ margin: '35px 0 ' }} />
+</LiveProvider>
 
 4. I then add the `buttonRef` and mouse event handlers to the `animated.button`.
 
 - In `onMouseMove` I recalculate and set the new spring value. The calculation is based on the `rotation` and `scale` props, which control how dramatic the animation is, the `x` and `y` coordinates of the mouse, and the size/location of the button.
 - `onMouseLeave` sets the spring back to the initial values.
 
-```
-    <animated.button
-      ref={buttonRef}
-      className="springy-button"
-      onMouseMove={({ clientX, clientY }) =>
-        set({
-          xys: calc(
-            rotation, // Used to calculate how dramatic the "wobble" effect of the button should be
-            scale, // The scale to switch the button should animate to
-            clientX, // The mouse's "x" position on the visible screen
-            clientY, // The mouse's "y" position on the visible screen
-            buttonRef.current, // A reference to the button element to get the offsetX/Y and offsetWidth/Height
-          )
-        })
-      }
-      onMouseLeave={() => set({ xys: [0, 0, 1] })}
-  ...
-```
+<LiveProvider
+  code={`<animated.button
+  ref={buttonRef}
+  className="springy-button"
+  onMouseMove={({ clientX, clientY }) =>
+    set({
+      xys: calc(
+        rotation, // Used to calculate how dramatic the "wobble" effect of the button should be
+        scale, // The scale to switch the button should animate to
+        clientX, // The mouse's "x" position on the visible screen
+        clientY, // The mouse's "y" position on the visible screen
+        buttonRef.current, // A reference to the button element to get the offsetX/Y and offsetWidth/Height
+      )
+    })
+  }
+  onMouseLeave={() => set({ xys: [0, 0, 1] })}
+>
+ `}
+  theme={theme}
+  disabled
+>
+  <LiveEditor style={{ margin: '35px 0 ' }} />
+</LiveProvider>
 
-5. Finally, the `transform` style is set using the springs `to` function which allows me to transform the spring values into the CSS rotations/scale. ex: `transform: perspective(800px) rotateX(10deg) rotateY(-10deg) scale(1.2)`.
+5. Finally, the `transform` style is set on the button using the springs `to` function which allows me to transform the spring values into the CSS rotations/scale. ex: `transform: perspective(800px) rotateX(10deg) rotateY(-10deg) scale(1.2)`.
 
-```
-transform: props.xys.to(transform),
-```
+<LiveProvider
+  code={`transform: props.xys.to(transform)`}
+  theme={theme}
+  disabled
+>
+  <LiveEditor style={{ margin: '35px 0 ' }} />
+</LiveProvider>
 
 ## Too much of a good Spring
 
@@ -223,8 +260,8 @@ Vestibular dysfunction, a balance disorder of the inner ear, is suprisingly comm
 
 To avoid making your users sick, consider using the `prefers-reduced-motion` [media query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) to disable or lessen animations in your app. I even made a hook out of it:
 
-```
-const useReducedMotion = () => {
+<LiveProvider
+  code={`const useReducedMotion = () => {
   const [matches, setMatch] = React.useState(false)
   React.useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -237,8 +274,12 @@ const useReducedMotion = () => {
     }
   }, []);
   return matches;
-}
-```
+}`}
+  theme={theme}
+  disabled
+>
+  <LiveEditor style={{ margin: '35px 0 ' }} />
+</LiveProvider>
 
 To use the hook, you can call it at the top of your function component, and use its return value to decide if to apply the animation or the default style.
 
