@@ -34,8 +34,8 @@ const Layout = ({ children }) => (
             {children}
           </div>
         </main>
-        <span style={{fontSize: '5rem', paddingTop: '100px', 'textAlign': 'center' }}>👋🏻</span>
-        <footer style={{textAlign:'center', margin: '100px 0 100px 0'}}><i>I hope you have a great day 💛</i></footer>
+        <span aria-label="a hand waving good bye" role="img" style={{ display: 'block', fontSize: '5rem', paddingTop: '100px', 'textAlign': 'center' }}>👋🏻</span>
+        <footer style={{textAlign:'center', margin: '100px 0 100px 0'}}><i>I hope you have a great day <span aria-label="a yellow heart" role="img">💛</span></i></footer>
       </React.Fragment>
     )}
   />

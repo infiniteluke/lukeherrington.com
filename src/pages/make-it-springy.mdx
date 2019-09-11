@@ -15,7 +15,7 @@ I’ve always enjoyed the short feedback loop of building on the web. Change a C
 
 That’s what makes me excited about react-spring, a way to “bring your components to life with simple spring animation primitives”. React’s declarative programming model has empowered web developers around the world to build predictable, interactive user interfaces and react-spring does the same for animations. If you’ve worked with React, you know it makes handling `state`, data that changes over time, a breeze:
 
-> 💡All code samples in this post are editable, hack away!
+> <span aria-label="idea" role="img">💡</span> All code samples in this post are editable, hack away!
 
 <LiveProvider code={`function Button() {
   const [active, setActive] = React.useState(false);
@@ -132,7 +132,7 @@ And just like that, you've animated your React Component! The above is a pretty 
   <LivePreview style={{ padding: '30px', display: 'flex', justifyContent: 'center'}} />
 </LiveProvider>
 
-> 💡 Try editting the default `rotation` or `scale` props' value to a larger number and see what happens!
+> <span aria-label="idea" role="img">💡</span> Try editting the default `rotation` or `scale` props' value to a larger number and see what happens!
 
 Let's walk through the changes needed to make this interaction possible:
 
@@ -205,7 +205,7 @@ const useReducedMotion = () => {
 
 To use the hook, you can call it at the top of your function component, and use its return value to decide if to apply the animation or the default style.
 
-> 💡If your OS supports "Reduce motion", try enabling it an interacting with the button below:
+> <span aria-label="idea" role="img">💡</span> If your OS supports "Reduce motion", try enabling it an interacting with the button below:
 
 <LiveProvider scope={{
   useSpring, useRect, animated, calc, transform, useReducedMotion
@@ -242,4 +242,4 @@ To use the hook, you can call it at the top of your function component, and use 
 
 I'm really excited about react-spring. With very little code, you can add a bit of personality to your app. But, as always, it's imperative that accesibility doesn't suffer at the handles of "cool" interactions. react-spring could bake a accesibility solution into the library by allowing a config option to respect the reduce motion media query. Until then, it's own you to make sure your app is usable by everyone!
 
-So, make it springy! But not _too_ springy... 😉
+So, make it springy! But not _too_ springy... <span aria-label="winking emoji" role="img">😉</span>
