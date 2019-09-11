@@ -1,6 +1,7 @@
 import React from 'react';
 
-const interpolate = (value, start, end, limit) => start + ((value / limit) * (end - start))
+const interpolate = (value, start, end, limit) =>
+  start + (value / limit) * (end - start);
 export const calc = (
   rotation,
   scale,
@@ -20,21 +21,21 @@ export const calc = (
     rotation,
     offsetHeight
   ),
-  scale
+  scale,
 ];
 export const transform = (x, y, s) =>
-  `perspective(800px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
+  `perspective(800px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 export const useReducedMotion = () => {
-  const [matches, setMatch] = React.useState(false)
+  const [matches, setMatch] = React.useState(false);
   React.useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     const handleChange = () => {
-      setMatch(mediaQuery.matches)
-    }
+      setMatch(mediaQuery.matches);
+    };
     mediaQuery.addEventListener('change', handleChange);
     return () => {
-      mediaQuery.removeEventListener('change', handleChange)
-    }
+      mediaQuery.removeEventListener('change', handleChange);
+    };
   }, []);
   return matches;
-}
+};
