@@ -8,10 +8,19 @@ module.exports = {
       'The personal site of, me, Luke Herrington 👋🏻✨🏄🌐',
   },
   plugins: [
+    'gatsby-remark-images',
     {
-      resolve: `gatsby-mdx`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: { default: path.resolve('./src/components/layout.js') },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 600,
+            },
+          }
+        ]
       },
     },
     'gatsby-plugin-react-helmet',
