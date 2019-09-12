@@ -199,7 +199,7 @@ Let's walk through the changes needed to make this interaction possible:
   <LiveEditor style={{ margin: '35px 0 ' }} />
 </LiveProvider>
 
-3. Next, I create the spring. It holds a array of the `x` rotation, `y` rotation and the `scale` values for our transform, respectively. I've also configured the spring's dynamics a bit to make the animation more playful and bouncy. You may notice I'm using `useSpring` a bit differently. You can optionally destructure a `set` function for triggering the spring manually.
+3. Next, I create the spring. It holds an array of the `x` rotation, `y` rotation and the `scale` values for our transform, respectively. I've also configured the spring's dynamics a bit to make the animation more playful and bouncy. You may notice I'm using `useSpring` a bit differently. You can optionally destructure a `set` function for triggering the spring manually.
 
 <LiveProvider
   code={`const [props, set] = useSpring(() => ({
@@ -257,8 +257,8 @@ As you can see, things can get out of hand quite quickly when it comes to animat
 
 When building animations, it's tempting to put them everywhere and make them extra "springy". However, consider the different kinds of users that may use your site.
 
-Vestibular dysfunction, a balance disorder of the inner ear, is suprisingly common among US adults. [A study](https://www.ncbi.nlm.nih.gov/pubmed/19468085) from the early 2000's found that approximately 69 million Americans had vestibular dysfunction which results in vertigo, nausea, migranes and hearing loss. Many people affected by vestibular dysfunction will choose to set the "Reduce motion" setting in their OS. In macOS it's found in the accesibility settings.
-![Image of reduce motion setting in macos accesibility settings](../../images/reduce-motion-macos.png)
+Vestibular dysfunction, a balance disorder of the inner ear, is surprisingly common among US adults. [A study](https://www.ncbi.nlm.nih.gov/pubmed/19468085) from the early 2000's found that approximately 69 million Americans had vestibular dysfunction which results in vertigo, nausea, migraines and hearing loss. Many people affected by vestibular dysfunction will choose to set the "Reduce motion" setting in their OS. In macOS it's found in the accessibility settings.
+![Image of reduce motion setting in macos accessibility settings](../../images/reduce-motion-macos.png)
 
 To avoid making your users sick, consider using the `prefers-reduced-motion` [media query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) to disable or lessen animations in your app. I even made a hook out of it:
 
@@ -267,6 +267,7 @@ To avoid making your users sick, consider using the `prefers-reduced-motion` [me
   const [matches, setMatch] = React.useState(false)
   React.useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setMatch(mediaQuery.matches);
     const handleChange = () => {
       setMatch(mediaQuery.matches)
     }
@@ -331,6 +332,6 @@ To use the hook, you can call it at the top of your function component, and use 
 
 ## All good Springs come to and end
 
-I'm really excited about react-spring. With very little code, you can add a bit of personality to your app. But, as always, it's imperative that accesibility doesn't suffer at the handles of "cool" interactions. react-spring could bake a accesibility solution into the library by allowing a config option to respect the reduce motion media query. Until then, it's on you to make sure your app is usable by everyone!
+I'm really excited about react-spring. With very little code, you can add a bit of personality to your app. But, as always, it's imperative that accessibility doesn't suffer at the handles of "cool" interactions. react-spring could bake a accessibility solution into the library by allowing a config option to respect the reduce motion media query. Until then, it's on you to make sure your app is usable by everyone!
 
 So, make it springy! But not _too_ springy... <span aria-label="winking emoji" role="img">😉</span>
