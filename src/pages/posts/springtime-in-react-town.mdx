@@ -68,6 +68,16 @@ onMouseOut={() => setActive(false)}`}
 
 And conditionally set the `transform` CSS property on the button `style` based on the `active` state.
 
+<LiveProvider
+  code={`style={{
+  transform: active ? 'scale(1.2)' : 'scale(1)',
+}}`}
+  theme={theme}
+  disabled
+>
+  <LiveEditor style={{ margin: '35px 0 ' }} />
+</LiveProvider>
+
 ## There's no such Spring as bad publicity
 
 Animating this button is as easy as dropping in a new hook `useSpring` that reacts to the `active` state.
