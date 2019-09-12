@@ -194,7 +194,7 @@ And just like that, you've animated your React Component! The above is a pretty 
   />
 </LiveProvider>
 
-> <span aria-label="idea" role="img">💡</span> Try editting the default `rotation` or `scale` props' value to a larger number and see what happens!
+> <span aria-label="idea" role="img">💡</span> Try editting the default <code>rotation</code> or <code>scale</code> props' value to a larger number and see what happens!
 
 Let's walk through the changes needed to make this interaction possible:
 
@@ -311,6 +311,8 @@ To use the hook, you can call it at the top of your function component, and use 
   const buttonRef = React.useRef();
   const reduceMotion = useReducedMotion();
   const defaultTransform = [0, 0, 1]
+  const actualRotation = reduceMotion ? rotation / 3 : rotation;
+  const actualScale = reduceMotion ? 1.01 : scale;
   const [props, set] = useSpring(() => ({
     xys: defaultTransform,
     config: { mass: 7, tension: 500, friction: 40 }
@@ -320,11 +322,11 @@ To use the hook, you can call it at the top of your function component, and use 
       ref={buttonRef}
       className="springy-button"
       onMouseMove={({ clientX, clientY }) =>
-        set({ xys: calc(rotation, scale, clientX, clientY, buttonRef.current) })
+        set({ xys: calc(actualRotation, actualScale, clientX, clientY, buttonRef.current) })
       }
       onMouseLeave={() => set({ xys: defaultTransform })}
       style={{
-        transform: reduceMotion ? defaultTransform : props.xys.to(transform),
+        transform: props.xys.to(transform),
       }}
     >
       Hover over me!
@@ -338,6 +340,25 @@ To use the hook, you can call it at the top of your function component, and use 
   <LivePreview
     style={{ padding: '30px', display: 'flex', justifyContent: 'center' }}
   />
+</LiveProvider>
+
+> <span aria-label="idea" role="img">💡</span> You could also skip animations all together by setting the <code>skipAnimation</code> Global in react-spring:
+
+<LiveProvider
+  code={`import {Globals} from 'react-spring'
+const MyApp = () => {
+	const prefersReducedMotion = useReducedMotion()
+	React.useEffect(() => {
+		Globals.assign({
+			skipAnimation: prefersReducedMotion,
+		})
+	}, [prefersReducedMotion])
+	return ...
+}`}
+  theme={theme}
+  disabled
+>
+  <LiveEditor style={{ margin: '35px 0 ' }} />
 </LiveProvider>
 
 ## All good Springs come to and end
