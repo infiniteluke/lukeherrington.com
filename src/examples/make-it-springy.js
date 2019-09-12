@@ -28,17 +28,15 @@ export const transform = (x, y, s) =>
 export const useReducedMotion = () => {
   const [matches, setMatch] = React.useState(false);
   React.useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion)');
-    if (mediaQuery) {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setMatch(mediaQuery.matches);
+    const handleChange = () => {
       setMatch(mediaQuery.matches);
-      const handleChange = () => {
-        setMatch(mediaQuery.matches);
-      };
-      mediaQuery.addEventListener('change', handleChange);
-      return () => {
-        mediaQuery.removeEventListener('change', handleChange);
-      };
-    }
+    };
+    mediaQuery.addEventListener('change', handleChange);
+    return () => {
+      mediaQuery.removeEventListener('change', handleChange);
+    };
   }, []);
   return matches;
 };
