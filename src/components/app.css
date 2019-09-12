@@ -81,6 +81,9 @@ li.list-item ul {
   flex-basis: 100%;
 }
 
+.anchor {
+  margin-right: 5px;
+}
 
 /*
  * Examples style

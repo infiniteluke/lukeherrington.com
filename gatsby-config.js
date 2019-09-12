@@ -14,6 +14,7 @@ module.exports = {
       options: {
         defaultLayouts: { default: path.resolve('./src/components/layout.js') },
         gatsbyRemarkPlugins: [
+          'gatsby-remark-autolink-headers',
           {
             resolve: `gatsby-remark-images`,
             options: {
