@@ -10,7 +10,7 @@ import {
 
 # It's Springtime in React Town
 
-One joy of web dev is its short feedback loop. Change a CSS property: now it’s red! Seeing my work right in the browser, interacting with it, and being able to send it to friends, makes the web a great platform for creative expressions of all kinds. Many powerful new ways to express creativity and personality have sprung up as the web has grown and evolved.
+One joy of web development is its short feedback loop. Change a CSS property: now it’s red! Seeing my work right in the browser, interacting with it, and being able to send it to friends, makes the web a great platform for creative expressions of all kinds. Many powerful new ways to express creativity and personality have sprung up as the web has grown and evolved.
 
 That’s what makes me excited about [react-spring](https://react-spring.io), a way to “bring your components to life with simple spring animation primitives”. React’s declarative programming model has empowered web developers around the world to build predictable, interactive user interfaces and react-spring does the same for animations. If you’ve worked with React, you know it makes handling `state`, data that changes over time, a breeze.
 
@@ -347,13 +347,13 @@ To use the hook, you can call it at the top of your function component, and use 
 <LiveProvider
   code={`import {Globals} from 'react-spring'
 const MyApp = () => {
-	const prefersReducedMotion = useReducedMotion()
-	React.useEffect(() => {
-		Globals.assign({
-			skipAnimation: prefersReducedMotion,
-		})
-	}, [prefersReducedMotion])
-	return ...
+  const prefersReducedMotion = useReducedMotion()
+  React.useEffect(() => {
+    Globals.assign({
+      skipAnimation: prefersReducedMotion,
+    })
+  }, [prefersReducedMotion])
+  return ...
 }`}
   theme={theme}
   disabled
