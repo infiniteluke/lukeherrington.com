@@ -67,6 +67,11 @@ li.list-item {
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
+  margin-bottom: 1.15rem;
+}
+
+li.list-item ul {
+  margin-left: 2.45rem;
 }
 
 li *:nth-child(1n) {
