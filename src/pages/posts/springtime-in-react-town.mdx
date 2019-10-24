@@ -66,6 +66,8 @@ And conditionally set the `transform` CSS property on the button `style` based o
 
 Animating this button is as easy as dropping in a new hook `useSpring` that reacts to the `active` state.
 
+> <span aria-label="idea" role="img">🤔</span> Consider using CSS animations for simple hover interactions like this. We'll build on this example though. Just wait! 😉
+
 <LiveCode
   scope={{
     useSpring,
@@ -119,7 +121,7 @@ Wire up the "animated" `props` from `useSpring` to our buttons `style` prop.
   disabled
 />
 
-And just like that, you've animated your React Component! The above is a pretty simple animation, though, and **I'd recommend using CSS animations if you're simply looking for a hover interaction**. So, let's look at a more involved animation to see where the power of react-spring really kicks in!
+And just like that, you've animated your React Component! The above is a pretty simple animation, though, **I'd recommend using CSS animations if you're looking for a simple hover interaction**. So, let's look at a more involved animation to see where the power of react-spring really kicks in!
 
 ## Spring It On
 
@@ -240,7 +242,7 @@ To avoid making your users sick, consider using the `prefers-reduced-motion` [me
   disabled
 />
 
-> <span aria-label="fire" role="img">🔥</span> I turned this into a library called <a href="https://github.com/infiniteluke/react-reduce-motion">react-reduce-motion</a>. It implements <code>useReducedMotion</code> for web and react native. It'll be on NPM soon.
+> <span aria-label="fire" role="img">🔥</span> I turned this into a library called <a href="https://github.com/infiniteluke/react-reduce-motion">react-reduce-motion</a>. It implements <code>useReducedMotion</code> for web and react native.
 
 To use the hook, you can call it at the top of your function component, and use its return value to decide if to apply the animation or the default style.
 
@@ -299,7 +301,7 @@ const MyApp = () => {
   disabled
 />
 
-## All good Springs come to and end
+## All good Springs come to an end
 
 I'm really excited about react-spring. With very little code, you can add a bit of personality to your app. But, as always, it's imperative that accessibility doesn't suffer for the sake of "cool" interactions. react-spring could bake an accessibility solution into the library by allowing a config option or [shipping the above hook](https://github.com/react-spring/react-spring/issues/811) to help devs respect the reduce motion media query. Until then, it's on you to make sure your app is usable by everyone!
 
