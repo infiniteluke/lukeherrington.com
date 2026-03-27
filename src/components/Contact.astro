@@ -1,0 +1,72 @@
+---
+---
+
+<section id="contact" class="py-24 px-6">
+  <div class="max-w-2xl mx-auto">
+    <p class="text-cyan-400 font-medium mb-4 tracking-wide uppercase text-sm text-center">Get In Touch</p>
+    <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-4">
+      Let's Build Something
+    </h2>
+    <p class="text-slate-400 text-center mb-12 text-lg">
+      Tell me about the workflow that's driving your team crazy. I'll tell you how to fix it.
+    </p>
+
+    <form
+      action="https://formspree.io/f/xpwzgkvl"
+      method="POST"
+      class="space-y-6"
+    >
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div>
+          <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors"
+            placeholder="Your name"
+          />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors"
+            placeholder="you@company.com"
+          />
+        </div>
+      </div>
+      <div>
+        <label for="company" class="block text-sm font-medium text-slate-300 mb-2">Company</label>
+        <input
+          type="text"
+          id="company"
+          name="company"
+          class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors"
+          placeholder="Your company"
+        />
+      </div>
+      <div>
+        <label for="message" class="block text-sm font-medium text-slate-300 mb-2">What's the pain point?</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          required
+          class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors resize-none"
+          placeholder="Tell me about the workflow that's not working..."
+        ></textarea>
+      </div>
+      <button
+        type="submit"
+        class="w-full bg-gradient-to-r from-cyan-400 to-cyan-300 text-slate-900 px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
+      >
+        Send Message
+      </button>
+    </form>
+  </div>
+</section>
