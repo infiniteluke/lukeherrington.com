@@ -8,15 +8,22 @@ const links = [
 ];
 ---
 
-<nav class="fixed top-0 w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+<nav
+  class="fixed top-0 w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800"
+>
   <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
     <a href="/" class="text-lg font-semibold text-white">LH</a>
     <div class="hidden md:flex gap-8">
-      {links.map(link => (
-        <a href={link.href} class="text-sm text-slate-400 hover:text-white transition-colors">
-          {link.label}
-        </a>
-      ))}
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="text-sm text-slate-400 hover:text-white transition-colors"
+          >
+            {link.label}
+          </a>
+        ))
+      }
     </div>
     <a
       href="#contact"

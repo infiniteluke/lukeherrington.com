@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css'
+import "../styles/global.css";
 
 interface Props {
   title?: string;
@@ -8,7 +8,7 @@ interface Props {
 
 const {
   title = "Luke Herrington — Staff Full-Stack Engineer",
-  description = "Bespoke internal tools for companies tired of restrictive SaaS. Software that works the way your brain does."
+  description = "Bespoke internal tools for companies tired of restrictive SaaS. Software that works the way your brain does.",
 } = Astro.props;
 ---
 
@@ -22,7 +22,10 @@ const {
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <title>{title}</title>
   </head>
   <body class="bg-slate-900 text-slate-100 font-sans antialiased">

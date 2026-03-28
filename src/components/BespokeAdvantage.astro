@@ -2,45 +2,55 @@
 const advantages = [
   {
     title: "Mirrors Your Mental Model",
-    description: "Your tool should reflect how your team already thinks and works, not force them into someone else's framework."
+    description:
+      "Your tool should reflect how your team already thinks and works, not force them into someone else's framework.",
   },
   {
     title: "Zero Waste",
-    description: "Every feature exists because you need it. No bloat, no unused tabs, no confusing menus."
+    description:
+      "Every feature exists because you need it. No bloat, no unused tabs, no confusing menus.",
   },
-    {
+  {
     title: "Evolves With You",
-    description: "When your process changes, your tool changes with it. No more waiting on vendor roadmaps."
+    description:
+      "When your process changes, your tool changes with it. No more waiting on vendor roadmaps.",
   },
-  
+
   {
     title: "A Teammate, Not a Ticket Number",
-    description: "With SaaS, your feature request joins a queue of thousands. With me, you get a dedicated engineer who knows your business and treats your priorities as their own."
-  }
+    description:
+      "With SaaS, your feature request joins a queue of thousands. With me, you get a dedicated engineer who knows your business and treats your priorities as their own.",
+  },
 ];
 ---
 
 <section id="advantage" class="py-24 px-6 bg-slate-800/30">
   <div class="max-w-6xl mx-auto">
-    <p class="text-cyan-400 font-medium mb-4 tracking-wide uppercase text-sm text-center">The Advantage</p>
+    <p
+      class="text-cyan-400 font-medium mb-4 tracking-wide uppercase text-sm text-center"
+    >
+      The Advantage
+    </p>
     <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-4">
-      Custom software isn't a luxury anymore. 
+      Custom software isn't a luxury anymore.
     </h2>
     <p class="text-slate-400 text-center max-w-2xl mx-auto mb-16 text-lg">
       Purpose-built apps work how you expect, because they're built for you.
     </p>
     <div class="grid md:grid-cols-2 gap-8">
-      {advantages.map((adv, i) => (
-        <div class="flex gap-5">
-          <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-brand flex items-center justify-center text-slate-900 font-bold text-sm">
-            {i + 1}
+      {
+        advantages.map((adv, i) => (
+          <div class="flex gap-5">
+            <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-brand flex items-center justify-center text-slate-900 font-bold text-sm">
+              {i + 1}
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-white mb-2">{adv.title}</h3>
+              <p class="text-slate-400 leading-relaxed">{adv.description}</p>
+            </div>
           </div>
-          <div>
-            <h3 class="text-lg font-semibold text-white mb-2">{adv.title}</h3>
-            <p class="text-slate-400 leading-relaxed">{adv.description}</p>
-          </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>
