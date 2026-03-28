@@ -3,43 +3,58 @@ const painPoints = [
   {
     icon: "📦",
     title: "Feature Bloat",
-    description: "You're paying for 200 features but only using 12. The rest just get in your team's way."
+    description:
+      "You're paying for 200 features but only using 12. The rest just get in your team's way.",
   },
   {
     icon: "🔒",
     title: "Rigid Workflows",
-    description: "Your process has to bend to fit the tool, instead of the tool being design to match your process."
+    description:
+      "Your process has to bend to fit the tool, instead of the tool being design to match your process.",
   },
   {
-    icon: "⌨️",
-    title: "Manual Data Entry",
-    description: "Copy-pasting between three tabs because no integration exists for your specific tools."
+    icon: "🐌",
+    title: "Slow Iteration",
+    description:
+      "Bug fixes take months. Feature requests disappear into a backlog. You're stuck waiting while your team works around the gaps.",
   },
   {
-    icon: "🧩",
-    title: "Integration Gaps",
-    description: "Duct-taping automations together because the vendor won't build what you actually need."
-  }
+    icon: "🗺️",
+    title: "No Roadmap Control",
+    description:
+      "The vendor decides what gets built and when. Your priorities keep getting deprioritized.",
+  },
 ];
 ---
 
 <section id="problems" class="py-24 px-6">
   <div class="max-w-6xl mx-auto">
-    <p class="text-cyan-400 font-medium mb-4 tracking-wide uppercase text-sm text-center">The Problem</p>
+    <p
+      class="text-cyan-400 font-medium mb-4 tracking-wide uppercase text-sm text-center"
+    >
+      The Problem
+    </p>
     <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-4">
       SaaS Friction Is Costing You
     </h2>
     <p class="text-slate-400 text-center max-w-2xl mx-auto mb-16 text-lg">
-      Off-the-shelf tools are built for everyone, which means they're built for no one.
+      Off-the-shelf tools are built for everyone, which means they're built for
+      no one.
     </p>
     <div class="grid md:grid-cols-2 gap-8">
-      {painPoints.map(point => (
-        <div class="bg-slate-800/50 border border-slate-700/50 rounded-xl p-8 hover:border-cyan-400/30 transition-colors">
-          <span class="text-3xl mb-4 block">{point.icon}</span>
-          <h3 class="text-xl font-semibold text-white mb-3">{point.title}</h3>
-          <p class="text-slate-400 leading-relaxed">{point.description}</p>
-        </div>
-      ))}
+      {
+        painPoints.map((point) => (
+          <div class="bg-slate-800/50 border border-slate-700/50 rounded-xl p-8 hover:border-cyan-400/30 transition-colors">
+            <div class="flex items-center gap-4">
+              <span class="text-3xl mb-4">{point.icon}</span>
+              <h3 class="text-xl font-semibold text-white mb-3">
+                {point.title}
+              </h3>
+            </div>
+            <p class="text-slate-400 leading-relaxed">{point.description}</p>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>
