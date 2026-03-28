@@ -2,41 +2,53 @@
 const process = [
   {
     step: "1. Discovery",
-    description: "I learn how your team actually works. Not how they're supposed to work — how they really work."
+    description:
+      'I learn how your team actually works. Not how they\'re "supposed to" work.',
   },
   {
     step: "2. Prototype",
-    description: "A working prototype in days, not months. You see real software early, not slide decks."
+    description:
+      "A working prototype in days, not months. You see real software early, not slide decks.",
   },
   {
     step: "3. Iterate",
-    description: "We refine together until the tool matches your workflow. No friction."
+    description:
+      "We refine together until the tool matches your workflow. No friction.",
   },
   {
     step: "4. Ship & Support",
-    description: "Production-grade deployment with monitoring, documentation, and ongoing support."
-  }
+    description:
+      "Production-grade deployment with monitoring, documentation, and ongoing support.",
+  },
 ];
 ---
 
 <section id="how-i-work" class="py-24 px-6 bg-slate-800/30">
   <div class="max-w-4xl mx-auto">
-    <p class="text-cyan-400 font-medium mb-4 tracking-wide uppercase text-sm text-center">How I Work</p>
+    <p
+      class="text-cyan-400 font-medium mb-4 tracking-wide uppercase text-sm text-center"
+    >
+      How I Work
+    </p>
     <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-16">
       No Wasted Time, Fast Results
     </h2>
     <div class="space-y-8">
-      {process.map(p => (
-        <div class="flex gap-5">
-          <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-brand flex items-center justify-center text-slate-900 font-bold text-sm">
-            {p.step.charAt(0)}
+      {
+        process.map((p) => (
+          <div class="flex gap-5">
+            <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-brand flex items-center justify-center text-slate-900 font-bold text-sm">
+              {p.step.charAt(0)}
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-white mb-2">
+                {p.step.slice(3)}
+              </h4>
+              <p class="text-slate-400 leading-relaxed">{p.description}</p>
+            </div>
           </div>
-          <div>
-            <h4 class="text-lg font-semibold text-white mb-2">{p.step.slice(3)}</h4>
-            <p class="text-slate-400 leading-relaxed">{p.description}</p>
-          </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>
