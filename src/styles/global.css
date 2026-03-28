@@ -12,4 +12,16 @@
   --color-slate-100: #f1f5f9;
   --color-white: #ffffff;
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --gradient-brand: linear-gradient(45deg,#0cf,#4be8ff);
+}
+
+@utility text-gradient-brand {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@utility bg-gradient-brand {
+  background: var(--gradient-brand);
 }
