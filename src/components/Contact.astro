@@ -11,7 +11,14 @@
       Tell me about the workflow that's driving your team crazy. I'll tell you how to fix it.
     </p>
 
+    <div id="form-success" class="hidden text-center py-12">
+      <span class="text-4xl mb-4 block">&#10003;</span>
+      <h3 class="text-2xl font-bold text-white mb-2">Message Sent</h3>
+      <p class="text-slate-400">Thanks for reaching out. I'll get back to you soon.</p>
+    </div>
+
     <form
+      id="contact-form"
       name="contact"
       method="POST"
       data-netlify="true"
@@ -71,3 +78,24 @@
     </form>
   </div>
 </section>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const success = document.getElementById('form-success')!;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data as any).toString(),
+      });
+      form.classList.add('hidden');
+      success.classList.remove('hidden');
+    } catch {
+      form.submit();
+    }
+  });
+</script>
