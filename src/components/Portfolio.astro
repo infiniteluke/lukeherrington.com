@@ -1,0 +1,97 @@
+---
+const projects = [
+  {
+    name: "The Plot",
+    url: "https://theplot.io",
+    tagline: "Collaborative Storyboard Creator",
+    description: "An intuitive storyboard creation platform with real-time collaboration. Designed for creative teams who need to visualize narratives without fighting clunky timeline editors.",
+    image: { src: "/img/theplot.webp", alt: "The Plot — storyboard creator interface", width: 906, height: 455 },
+    highlights: [
+      "Drag-and-drop storyboard builder",
+      "Real-time multi-user collaboration",
+      "Tiered subscription pricing with Stripe integration"
+    ]
+  },
+  {
+    name: "San Diego Elite Training",
+    url: "https://app.sdelitetraining.com",
+    tagline: "Member Mobile App + Admin Training Management Backend",
+    description: "A purpose-built training management platform that went from initial concept to working demo in one week. Built to handle the unique scheduling and tracking needs that generic LMS platforms couldn't accommodate.",
+    images: [
+      { src: "/img/sdet-app-member.webp", alt: "SD Elite Training — member app", width: 630, height: 1266 },
+      { src: "/img/sdet-app-admin.webp", alt: "SD Elite Training — admin dashboard", width: 1643, height: 867 },
+    ],
+    highlights: [
+      "Idea to working demo in 1 week",
+      "Multi-layered Member/PT workout management",
+      "Built around the client's exact process, not a generic template"
+    ]
+  }
+];
+---
+
+<section id="work" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <p class="text-cyan-400 font-medium mb-4 tracking-wide uppercase text-sm text-center">Portfolio</p>
+    <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-16">
+      Work That Speaks for Itself
+    </h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      {projects.map(project => (
+        <div class="bg-slate-800/50 border border-slate-700/50 rounded-xl p-8 hover:border-cyan-400/30 transition-colors group">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-2xl font-bold text-white">{project.name}</h3>
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-cyan-400 text-sm hover:underline"
+            >
+              Visit &rarr;
+            </a>
+          </div>
+          <p class="text-cyan-400 text-sm font-medium mb-4">{project.tagline}</p>
+          {project.image && (
+            <img
+              src={project.image.src}
+              alt={project.image.alt}
+              width={project.image.width}
+              height={project.image.height}
+              class="w-full rounded-lg mb-6"
+              loading="lazy"
+            />
+          )}
+          {project.images && (
+            <div class="relative mb-6">
+              <img
+                src={project.images[1].src}
+                alt={project.images[1].alt}
+                width={project.images[1].width}
+                height={project.images[1].height}
+                class="w-full rounded-lg shadow-lg"
+                loading="lazy"
+              />
+              <img
+                src={project.images[0].src}
+                alt={project.images[0].alt}
+                width={project.images[0].width}
+                height={project.images[0].height}
+                class="absolute -bottom-4 -right-2 h-[110%] w-auto rounded-lg shadow-xl"
+                loading="lazy"
+              />
+            </div>
+          )}
+          <p class="text-slate-400 leading-relaxed mb-6">{project.description}</p>
+          <ul class="space-y-2">
+            {project.highlights.map(h => (
+              <li class="flex items-start gap-2 text-slate-300 text-sm">
+                <span class="text-cyan-400 mt-1">&#10003;</span>
+                {h}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
