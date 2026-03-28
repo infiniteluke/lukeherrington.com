@@ -17,7 +17,12 @@
     "astro": "^6.1.1",
     "tailwindcss": "^4.2.2"
   },
+  "lint-staged": {
+    "*.{js,mjs,ts,css,md,json,astro}": "prettier --write"
+  },
   "devDependencies": {
+    "lefthook": "^2.1.4",
+    "lint-staged": "^16.4.0",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1"
   }
